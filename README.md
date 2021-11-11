@@ -2,6 +2,8 @@
 
 TypeScript (v4.1+) types for using <a href="https://docs.mongodb.com/manual/core/document/#document-dot-notation">mongoDB dot notation</a> while querying mongo documents.
 
+> Patched version to have `_id` as type **ObjectId** due to type checking errors.
+
 ## How to use
 
 *Install*
@@ -58,7 +60,7 @@ export type Doc1_mongoDot = mongoDot_lvl2<Doc1, 0|1|2>;
 // the type resolves to:
 //
 type Doc1_mongoDot = {
-    _id?: number;
+    _id?: ObjectId;
     __v?: number;
     prop1?: string;
     prop2?: {
@@ -125,7 +127,7 @@ export type Doc2_mongoDot = mongoDot_lvl2<Doc2, 0|1|2>;
 // the type resolves to:
 //
 type Doc2_mongoDot = {
-    _id?: number;
+    _id?: ObjectId;
     __v?: number;
     prop1?: string;
     prop2?: {

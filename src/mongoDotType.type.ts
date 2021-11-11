@@ -1,9 +1,10 @@
 import { Expand, FlattenUnion_shallow, objNotNever } from "./extras.type";
+
+import { ObjectId } from 'mongodb'
 import { PickSubs_dotNotation } from "./PickSubs_dotNotation.type";
 
-
 export type defaultDocFields = '_id' | '__v';
-export type obj_defaultDocFields = { _id?: number, __v?: number };
+export type obj_defaultDocFields = { _id?: ObjectId, __v?: number };
 
 /**
  * Picks subproperties of the given object with dot notation
